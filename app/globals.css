@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --radius: 0.5rem;
+  --font-work-sans: "Work Sans", serif;
+  --primary: #020012;
+  --primary-100: #ceebff;
+  --secondary: #4eb9ff;
+  --black-100: #333333;
+  --black-200: #141413;
+  --black-300: #7d8087;
+  --black: #000000;
+  --white-100: #f7f7f7;
+  --white: #ffffff;
+}
+
+@theme {
+  /* COLORS */
+  --color-primary: var(--primary);
+  --color-primary-100: var(--primary-100);
+  --color-secondary: var(--secondary);
+  --color-black-100: var(--black-100);
+  --color-black-200: var(--black-200);
+  --color-black-300: var(--black-300);
+  --color-black: var(--black);
+  --color-white-100: var(--white-100);
+  --color-white: var(--white);
+
+  /* FONT FAMILY */
+  --font-work-sans: var(--font-work-sans);
+
+  /* BORDER RADIUS */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* Box Shadows */
+  --shadow-100: 5px 5px 7px 0px rgba(0, 0, 0, 0.2);
+  --shadow-200: 2px 2px 0px 2px rgb(0, 0, 0);
+  --shadow-300: 4px 4px 0px 4px var(--color-secondary);
+  --shadow-400: 0px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: var;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-work-sans);
+} */
+
+button {
+  cursor: pointer;
+  outline: none !important;
+}
+
+@layer utilities {
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .text-30-extrabold {
+    @apply text-[30px] font-extrabold text-white;
+  }
+
+  .text-30-bold {
+    @apply text-[30px] font-bold text-black leading-[36px];
+  }
+
+  .text-30-semibold {
+    @apply font-semibold sm:text-[30px] text-2xl text-black;
+  }
+
+  .text-26-semibold {
+    @apply font-semibold text-[26px] text-black leading-7;
+  }
+
+  .text-24-black {
+    @apply text-[24px] font-black text-black;
+  }
+
+  .text-20-medium {
+    @apply font-medium text-[20px] text-black;
+  }
+
+  .text-16-medium {
+    @apply font-medium text-[16px] text-black;
+  }
+
+  .text-14-normal {
+    @apply font-normal text-sm text-white-100/80;
+  }
+
+  .primary_btn {
+    @apply rounded-full bg-primary border-1 border-[#a7a7a7] font-medium sm:text-[18px] text-sm text-white px-5 py-2 cursor-pointer;
+  }
+
+  .secondary_btn {
+    @apply rounded-full bg-secondary border-1 border-secondary font-medium text-[18px] text-primary px-5 py-3 cursor-pointer hover:bg-transparent hover:text-white transition-all duration-500;
+  }
+
+  .nav-menu {
+    @apply text-[16px] text-black-100 font-medium;
+  }
+
+  .login_modal {
+    @apply w-full fixed inset-0 bg-black/80 flex items-center justify-center z-50;
+  }
+
+  .profile-dropdown {
+    @apply absolute top-16 right-2 mt-2 bg-white border border-gray-200 rounded-xl shadow-400 w-48 p-2 z-50;
+  }
+
+  .profile-dropdown-item {
+    @apply hover:bg-primary-100 p-2 rounded-sm transition-colors duration-500 ease-in-out;
+  }
+
+  .modal_btn {
+    @apply w-full flex items-center justify-center gap-3 border border-black-300 text-black-100 px-4 py-2 rounded-md hover:bg-gray-100 transition-colors cursor-pointer;
+  }
+
+  .pink_container {
+    background-image: url("../public/background.png");
+    @apply w-full bg-primary min-h-[530px] flex justify-center items-start flex-col py-10 sm:px-12 px-6 bg-cover bg-no-repeat bg-top bg-fixed;
+  }
+
+  .tag {
+    @apply bg-secondary px-6 py-3 font-work-sans font-bold rounded-sm uppercase relative;
+  }
+
+  .heading {
+    @apply uppercase py-1 font-work-sans font-extrabold text-white sm:text-[54px] sm:leading-[56px] text-[36px] leading-[40px] max-w-3xl my-5;
+  }
+
+  .sub-heading {
+    @apply font-medium sm:text-[24px] text-[18px] text-white max-w-2xl break-words;
+  }
+
+  .content {
+    @apply font-normal sm:text-[16px] text-[14px] text-black-200 break-words text-justify pt-3;
+  }
+
+  .section_container {
+    @apply px-5 py-8 lg:px-15 sm:px-10 sm:py-16 w-full mx-auto;
+  }
+
+  .card_grid {
+    @apply grid lg:grid-cols-3 sm:grid-cols-2 gap-5;
+  }
+
+  .card_grid-sm {
+    @apply grid sm:grid-cols-2 gap-5;
+  }
+
+  .no-result {
+    @apply text-black-100 text-lg font-medium;
+  }
+
+  /* profile */
+  .profile_container {
+    @apply w-full pb-10 pt-2 px-6 max-w-7xl mx-auto flex flex-col gap-10;
+  }
+
+  .profile_card {
+    @apply w-full px-2 sm:px-6 lg:px-20 pb-6 pt-6 flex sm:flex-row flex-col items-center justify-between md:gap-10 gap-3 bg-primary-100 border-black rounded-[10px] relative z-0 h-fit;
+  }
+
+  .profile_image {
+    @apply rounded-full object-cover;
+  }
+
+  /* idea details */
+  .divider {
+    @apply border-dotted bg-zinc-400 max-w-4xl my-10 mx-auto;
+  }
+
+  .view_skeleton {
+    @apply bg-zinc-400 h-10 w-24 rounded-lg fixed bottom-3 right-3;
+  }
+
+  /* navbar */
+  .avatar {
+    @apply p-0 focus-visible:ring-0 bg-none rounded-full drop-shadow-md;
+  }
+
+  .dropdown-menu {
+    @apply w-56 border-[5px] border-black bg-white p-5 rounded-2xl;
+  }
+
+  .login {
+    @apply border-[5px] py-4 border-black bg-white text-black relative shadow-100 font-work-sans font-medium hover:shadow-none transition-all duration-500;
+  }
+
+  /* searchform */
+  .search-form {
+    @apply max-w-3xl w-full min-h-[40px] bg-white border-[1px] border-[#bebebe] rounded-[6px] text-[16px] px-4 flex flex-row items-center gap-5;
+  }
+
+  .search-input {
+    @apply flex-1 font-normal placeholder:font-normal placeholder:text-black-100 w-full h-auto outline-none;
+  }
+
+  .search-btn {
+    @apply size-[32px] rounded-full flex justify-center items-center;
+  }
+
+  /* Filter Dropdown */
+  .filter-dropdown {
+    @apply max-w-50 w-40 rounded-[6px] border-[1px] text-[16px] text-black-100 border-[#bebebe] outline-none !p-2 !px-3 cursor-pointer m-0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, gray 50%),
+      linear-gradient(135deg, gray 50%, transparent 50%);
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      calc(100% - 2.5em) 0.5em;
+    background-size:
+      5px 5px,
+      5px 5px,
+      1px 1.5em;
+    background-repeat: no-repeat;
+  }
+
+  .options {
+    @apply text-[14px];
+  }
+
+  /* startup page */
+  .startup_heading {
+    @apply font-bold text-3xl text-black-200 max-sm:!text-[22px] leading-[20px];
+  }
+
+  .prose > h1 {
+    @apply max-sm:!text-[22px];
+  }
+
+  /* startupcard */
+  .startup-card {
+    @apply bg-white border-1 border-[#cecece] py-6 px-5 rounded-[22px] shadow-100 hover:shadow-xl transition-all duration-500;
+  }
+
+  .startup-card_date {
+    @apply font-medium text-[14px] text-black-300 bg-primary-100 px-4 py-2 rounded-full group-hover:bg-white-100 transition-all duration-500;
+  }
+
+  .startup-card_desc {
+    @apply font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all;
+  }
+
+  .startup-card_img {
+    @apply w-full h-[164px] rounded-[10px] object-cover;
+  }
+
+  .startup-card_btn {
+    @apply rounded-full bg-black-200 font-medium text-[16px] text-white px-5 py-3;
+  }
+
+  .startup-card_skeleton {
+    @apply w-full h-96 rounded-[22px] bg-zinc-400;
+  }
+
+  /* startupform */
+  .startup-form {
+    @apply w-2xl bg-white space-y-6 sm:px-6 px-2;
+  }
+
+  .startup-form_label {
+    @apply font-medium text-[15px] leading-2 text-black;
+  }
+
+  .startup-form_input {
+    @apply border border-[#cecece] px-4 py-5 text-[14px] text-[#414141] font-medium rounded-lg mt-1.5 placeholder:text-black-300 outline-none ring-0 ring-transparent focus:ring-0 focus:ring-transparent focus:outline-none focus:border-[#cecece] shadow-none;
+  }
+
+  .startup-form_textarea {
+    @apply border border-[#cecece] px-4 py-3 text-[14px] text-[#414141] font-medium rounded-lg mt-1.5 h-[70px] placeholder:text-black-300 outline-none ring-0 ring-transparent focus:ring-0 focus:ring-transparent focus:outline-none focus:border-[#cecece] shadow-none;
+  }
+
+  .startup-form_error {
+    @apply flex gap-1.5 items-center text-red-500 mt-2 ml-4 text-sm;
+  }
+
+  .startup-form_editor {
+    @apply mt-3 border-[3px] border-black text-[18px] text-black font-semibold placeholder:text-black-300;
+  }
+
+  .startup-form_btn {
+    @apply bg-primary cursor-pointer rounded-full p-5 min-h-[60px] w-full font-semibold text-[18px] hover:bg-secondary hover:text-primary;
+  }
+
+  /* view */
+  .view-container {
+    @apply flex justify-end items-center mt-5 fixed bottom-3 right-3;
+  }
+
+  .view-text {
+    @apply font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-lg capitalize;
+  }
+
+  .category-tag {
+    @apply font-medium sm:text-[16px] text-sm bg-primary-100 px-4 sm:py-2 py-1 rounded-full leading-5;
+  }
+
+  .pattern {
+    background-image: linear-gradient(
+      to right,
+      transparent 49.5%,
+      rgba(251, 232, 67, 0.2) 49.5%,
+      rgba(251, 232, 67, 0.6) 50.5%,
+      transparent 50.5%
+    );
+    background-size: 5% 100%;
+    background-position: center;
+    background-repeat: repeat-x;
+  }
+
+  .prism-bg {
+    background-image: url("../public/constellation.png");
+    @apply bg-no-repeat bg-cover bg-center;
+  }
+
+  .tag-tri {
+    @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
+  }
+}
+
+.w-md-editor-toolbar {
+  padding: 10px;
+}
+
+.prose a[href^="/user/"] {
+  color: #0666ff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.prose a[href^="/user/"]:hover {
+  text-decoration: underline;
+}
+
+.ant-rate-star-zero .ant-rate-star-second, .ant-rate-star-zero .ant-rate-star-first {
+  color: #bdbdbd !important;
+}
+
+:where(.css-dev-only-do-not-override-1vjf2v5).ant-rate .ant-rate-star-second {
+  color: #bdbdbd;
+}
