@@ -3,7 +3,7 @@
 import { getAverageFeedbackStats } from "@/lib/actions";
 import { client } from "@/sanity/lib/client";
 import { FEEDBACK_STATS_QUERY } from "@/sanity/lib/queries";
-import { Rate, Skeleton } from "antd";
+import { Rate } from "antd";
 import { useEffect, useState } from "react";
 import AISuggestion from "./ai/AISuggestion";
 import { Lightbulb } from "lucide-react";

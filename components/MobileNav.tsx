@@ -5,7 +5,6 @@ import { LogOutIcon, Menu, RocketIcon, X } from "lucide-react";
 import Link from "next/link";
 import { signOutSession } from "@/lib/auth-actions";
 import { LoginModal } from "./LoginModal";
-import UserAvatar from "./UserAvatar";
 
 export const MobileMenu = ({ session, profileAvatar }: { session: any; profileAvatar: any }) => {
   const [isOpen, setIsOpen] = useState(false);

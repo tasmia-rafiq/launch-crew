@@ -9,7 +9,6 @@ import {
   COMMENTS_BY_STARTUP_QUERY,
   FEEDBACK_STATS_BY_USERID_QUERY,
   FEEDBACK_STATS_QUERY,
-  FEEDBACKS_FOR_POST_IDS_QUERY,
   STARTUPS_BY_AUTHOR_QUERY,
 } from "@/sanity/lib/queries";
 import { nanoid } from "nanoid";

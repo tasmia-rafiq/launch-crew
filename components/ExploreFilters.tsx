@@ -7,10 +7,8 @@ import { RefreshCcw } from "lucide-react";
 
 export default function ExploreFilters({
   categories,
-  query,
 }: {
   categories: string[];
-  query?: string;
 }) {
   const router = useRouter();
   const params = useSearchParams();

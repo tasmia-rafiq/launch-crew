@@ -5,7 +5,6 @@ import { toast } from "sonner";
 import { Rate, Tooltip, Skeleton } from "antd";
 import { FaInfoCircle } from "react-icons/fa";
 import { deleteFeedback, getUserFeedback, submitFeedback } from "@/lib/actions";
-import { client } from "@/sanity/lib/client";
 import {
   DropdownMenu,
   DropdownMenuContent,

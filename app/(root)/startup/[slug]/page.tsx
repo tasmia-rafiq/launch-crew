@@ -19,11 +19,10 @@ import VoteButton from "@/components/VoteButton";
 import CommentSection from "@/components/CommentSection";
 import FeedbackSection from "@/components/FeedbackSection";
 import FeedbackStats from "@/components/FeedbackStats";
-import { getAverageFeedbackStats } from "@/lib/actions";
 
 const md = markdownit();
 
-const page = async ({ params }: { params: { slug: string } }) => {
+const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
   const session = await auth();
 

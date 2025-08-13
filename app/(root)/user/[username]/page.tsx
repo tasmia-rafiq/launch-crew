@@ -4,7 +4,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import UserStartups from "@/components/UserStartups";
 import { client } from "@/sanity/lib/client";
 import {
-  AUTHOR_BY_ID_QUERY,
   AUTHOR_BY_USERNAME_QUERY,
   STARTUPS_BY_AUTHOR_QUERY,
 } from "@/sanity/lib/queries";
