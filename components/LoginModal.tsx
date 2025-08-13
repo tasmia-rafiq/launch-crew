@@ -28,7 +28,7 @@ export const LoginModal = () => {
             </button>
 
             <h2 className="text-2xl font-semibold text-center mb-6">
-              Sign in to LaunchMate
+              Sign in to LaunchCrew
             </h2>
             <p className="text-16-medium !text-black-200 text-center mb-6">
               Validate your startup idea, share with the community, and gain

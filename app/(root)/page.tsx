@@ -4,7 +4,6 @@ import { sanityFetch, SanityLive } from "@/sanity/lib/live";
 import { auth } from "@/auth";
 import Link from "next/link";
 import {
-  ArrowRight,
   Lightbulb,
   MessageCircleDashed,
   MessageCircleIcon,
@@ -109,9 +108,28 @@ export default async function Home({
         {/* <SearchForm query={query} /> */}
       </section>
 
-      {/* HOW LAUNCHMATE WORKS */}
+      {/* TRENDING IDEAS */}
+      <section className="section_container">
+        <h2 className="text-30-bold text-center">Trending Startup Ideas</h2>
+        <p className="text-14-normal !text-[16px] !text-black-300 text-center py-2">
+          Discover innovative concepts already submitted by our growing
+          community — and get inspired.
+        </p>
+
+        <ul className="mt-7 card_grid">
+          {posts?.length > 0 ? (
+            posts.map((post: StartupCardType, index: number) => (
+              <StartupCard key={post?._id} post={post} />
+            ))
+          ) : (
+            <p className="no-results">No startups found</p>
+          )}
+        </ul>
+      </section>
+
+      {/* HOW LaunchCrew WORKS */}
       <section className="section_container bg-white-100">
-        <h2 className="text-30-bold text-center">How LaunchMate Works</h2>
+        <h2 className="text-30-bold text-center">How LaunchCrew Works</h2>
         <p className="text-14-normal !text-[16px] !text-black-300 text-center py-2">
           In just 3 simple steps, move from raw idea to refined concept with
           clarity and direction.
@@ -135,25 +153,6 @@ export default async function Home({
         </div>
       </section>
 
-      {/* TRENDING IDEAS */}
-      <section className="section_container">
-        <h2 className="text-30-bold text-center">Trending Startup Ideas</h2>
-        <p className="text-14-normal !text-[16px] !text-black-300 text-center py-2">
-          Discover innovative concepts already submitted by our growing
-          community — and get inspired.
-        </p>
-
-        <ul className="mt-7 card_grid">
-          {posts?.length > 0 ? (
-            posts.map((post: StartupCardType, index: number) => (
-              <StartupCard key={post?._id} post={post} />
-            ))
-          ) : (
-            <p className="no-results">No startups found</p>
-          )}
-        </ul>
-      </section>
-
       {/* CTA BANNER */}
       <section className="relative isolate overflow-hidden py-14 sm:py-20 bg-[url('/constellation.png')] bg-no-repeat bg-cover bg-center">
         {/* Background gradient */}
@@ -175,7 +174,7 @@ export default async function Home({
 
           <p className="mt-4 text-lg sm:text-xl text-indigo-100">
             Join hundreds of founders using&nbsp;
-            <span className="font-semibold text-white">LaunchMate</span>
+            <span className="font-semibold text-white">LaunchCrew</span>
             &nbsp;to refine their concepts before writing a single line of code.
           </p>
 
@@ -189,10 +188,10 @@ export default async function Home({
         </div>
       </section>
 
-      {/* WHY LAUNCHMATE */}
+      {/* WHY LaunchCrew */}
       <section className="section_container">
         <h2 className="text-30-bold text-center">
-          Why Creators Choose LaunchMate?
+          Why Creators Choose LaunchCrew?
         </h2>
         <p className="text-14-normal !text-[16px] !text-black-300 text-center py-2">
           We're built for early-stage creators who want to save time, reduce

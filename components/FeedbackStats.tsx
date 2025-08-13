@@ -184,7 +184,7 @@ export default function FeedbackStats({
               <Lightbulb className="size-4" />
               <p>
                 Get AI Suggestions once you get more than 2 feedbacks from the
-                LaunchMate Community.
+                LaunchCrew Community.
               </p>
             </div>
           )}

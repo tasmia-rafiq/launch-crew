@@ -22,7 +22,7 @@ const page = async () => {
         <h1 className="heading">Submit Your Startup Idea</h1>
         <h2 className="sub-heading">
           Share your vision with the world and validate your startup with the
-          LaunchMate community.
+          LaunchCrew community.
         </h2>
       </section>
 
