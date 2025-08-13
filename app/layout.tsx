@@ -44,7 +44,7 @@ const workSans = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "Launch Mate",
+  title: "LaunchCrew",
   description: "Pitch, Vote and Grow!",
 };
 
